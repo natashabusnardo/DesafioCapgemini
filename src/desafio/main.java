@@ -5,12 +5,18 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class main {
 
 	public static void main(String[] args) throws ParseException, IOException {
 		// TODO Auto-generated method stub
 
 		ListaAnuncios listaAnuncios = new ListaAnuncios();
+		List<Anuncio> anuncios = new ArrayList<Anuncio>();
+		
+		GravarCSV csv = new GravarCSV();
+		
+		Persistencia pers = new Persistencia(csv);
 		
 		Anuncio anuncio = new Anuncio();
 		anuncio.setCliente("natasha");
@@ -20,6 +26,7 @@ public class main {
 		anuncio.setInvestimentoDia(37);
 
 		listaAnuncios.inserir(anuncio);
+		anuncios.add(anuncio);
 
 		System.out.println(listaAnuncios.toString());
 
@@ -28,7 +35,7 @@ public class main {
 		int numVisualizacoes = CalculadoraProjecao.projecao(valorInvestido, false);
 		int numVisualizacoesC = CalculadoraProjecao.projecao(valorInvestido, true);
 		int numCliques = CalculadoraProjecao.numCliques(numVisualizacoesC);
-		int numCompartilhamentos = CalculadoraProjecao.numCompartilhamentos(numCliques);
+		int numCompartilhamentos = CalculadoraProjecao.numCompartilhamentos(numCliques);	
 
 		System.out.println("Valor total investido: " + valorInvestido);
 		System.out.println("Quantidade máxima de visualizações: " + numVisualizacoes);
@@ -37,7 +44,9 @@ public class main {
 
 		System.out.println(listaAnuncios.pesquisaCliente("natasha"));
 		System.out.println(listaAnuncios.pesquisaIntervalo(Anuncio.retornaData("24/05/2014"), Anuncio.retornaData("24/05/2014")));
-
+		
+		
+		pers.gravar(anuncios);
 	}
 
 }

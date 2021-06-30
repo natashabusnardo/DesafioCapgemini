@@ -14,7 +14,6 @@ public class ListaAnuncios {
 
 	public Anuncio pesquisaCliente(String cliente) {
 		for (Anuncio anuncio : listaAnuncio) {
-			System.out.println(anuncio.getCliente());
 			if (cliente.equals(anuncio.getCliente())) {
 				return anuncio;
 			}
