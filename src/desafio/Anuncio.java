@@ -89,7 +89,7 @@ public class Anuncio {
 		LocalDate date2 = LocalDate.parse(retornaData(dataTermino), format);
 
 		long daysBetween = ChronoUnit.DAYS.between(date1, date2);
-		
+
 		if (daysBetween == 0)
 			return valorInvestido;
 		else
