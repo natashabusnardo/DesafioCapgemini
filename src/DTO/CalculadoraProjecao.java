@@ -11,6 +11,7 @@ public class CalculadoraProjecao {
 	 * Método que realiza a projeção de visualizações.
 	 * 
 	 * @param valorInvestido, inicio
+	 * @return A quantidade de visuazações do anúncio
 	 */
 
 	public static int projecao(int valorInvestido, boolean inicio) {
@@ -28,6 +29,7 @@ public class CalculadoraProjecao {
 	 * Método que realiza a projeção do número de cliques.
 	 * 
 	 * @param visualizacoes
+	 * @return O alcance de cliques do anúncio
 	 */
 
 	public static int numCliques(int visualizacao) {
@@ -38,6 +40,7 @@ public class CalculadoraProjecao {
 	 * Método que realiza a projeção do número de compartilhamentos.
 	 * 
 	 * @param cliques
+	 * @return O alcance de compartilhamentos do anúncio
 	 */
 	public static int numCompartilhamentos(int cliques) {
 

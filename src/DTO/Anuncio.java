@@ -88,6 +88,7 @@ public class Anuncio {
 	 * Método que realiza a conversão de um Date para String.
 	 * 
 	 * @param data
+	 * @return Retona um objeto do tipo String.
 	 */
 	public static String retornaData(Date data) {
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
@@ -99,6 +100,7 @@ public class Anuncio {
 	 * Método que realiza a conversão de uma String para Date.
 	 * 
 	 * @param data
+	 * @return Retona um objeto do tipo Date.
 	 */
 
 	public static Date retornaData(String data) throws ParseException {
@@ -112,6 +114,7 @@ public class Anuncio {
 	 * investido.
 	 * 
 	 * @param dataInicio, dataTermino, valorInvestido
+	 * @return O valor total investido no anúncio
 	 */
 	public double valorInvestido(Date dataInicio, Date dataTermino, double valorInvestido) throws ParseException {
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");

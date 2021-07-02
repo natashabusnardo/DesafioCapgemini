@@ -23,6 +23,7 @@ public class ListaAnuncios {
 	 * Método que realiza a pesquisa por nome do cliente.
 	 * 
 	 * @param cliente
+	 * @return Retona uma String com todos os resultados da busca.
 	 */
 
 	public String pesquisaCliente(String cliente) {
@@ -40,6 +41,7 @@ public class ListaAnuncios {
 	 * Método que realiza a pesquisa por intervalo de tempo.
 	 * 
 	 * @param dataInicio, dataFinal
+	 * @return Retona uma String concatenando todos os resultados da busca.
 	 */
 	public String pesquisaIntervalo(Date dataInicio, Date dataFinal) {
 		String verAnuncios = " ";
@@ -60,6 +62,7 @@ public class ListaAnuncios {
 	 * Método que converte Date para StringDate no formato do MySQL.
 	 * 
 	 * @param pDate
+	 * @return Retona uma String concatenando todos os resultados da busca.
 	 */
 	public static String DataForStringMySQL(Date pDate) {
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -76,6 +79,7 @@ public class ListaAnuncios {
 	 * Método que converte StringDate no formato do MySQL para Date.
 	 * 
 	 * @param pDate
+	 * @return Retona um objeto no formato yyyy-MM-dd H:mm:ss.
 	 */
 	public static Date DataMySQLHoraDia(String pDate) {
 
