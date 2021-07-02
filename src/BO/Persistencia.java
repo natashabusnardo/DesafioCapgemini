@@ -1,7 +1,9 @@
-package desafio;
+package BO;
 
 import java.text.ParseException;
 import java.util.List;
+
+import DTO.Anuncio;
 
 
 public class Persistencia {

@@ -1,4 +1,4 @@
-package desafio;
+package DTO;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,6 +13,14 @@ public class Anuncio {
 	private Date dataInicio;
 	private Date dataTermino;
 	private int investimentoDia;
+
+	public Anuncio(String string, String string2, String string3, String string4, int i) {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Anuncio() {
+		
+	}
 
 	public String getNome() {
 		return nome;

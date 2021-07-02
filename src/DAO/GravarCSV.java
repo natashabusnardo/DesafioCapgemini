@@ -1,4 +1,4 @@
-package desafio;
+package DAO;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,10 +6,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import BO.Gravacao;
+import DTO.Anuncio;
 
 public class GravarCSV implements Gravacao {
 
@@ -47,7 +48,7 @@ public class GravarCSV implements Gravacao {
 			FileWriter arq = new FileWriter("Anuncios.csv", true);
 			PrintWriter gravarArq = new PrintWriter(arq);
 			for (Anuncio Anuncio : lista) {
-				gravarArq.printf("%s,%s,%s,%s,%d\n", Anuncio.getNome(), Anuncio.getCliente(), desafio.Anuncio.retornaData(Anuncio.getDataInicio()), desafio.Anuncio.retornaData(Anuncio.getDataTermino()),
+				gravarArq.printf("%s,%s,%s,%s,%d\n", Anuncio.getNome(), Anuncio.getCliente(), DTO.Anuncio.retornaData(Anuncio.getDataInicio()), DTO.Anuncio.retornaData(Anuncio.getDataTermino()),
 														   Anuncio.getInvestimentoDia());
 			}
 			

@@ -1,9 +1,18 @@
-package desafio;
+package main;
+
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+
+import BO.Gravacao;
+import BO.Persistencia;
+import DAO.GravarBD;
+import DAO.GravarCSV;
+import DTO.Anuncio;
+import DTO.CalculadoraProjecao;
+import DTO.ListaAnuncios;
 
 
 public class main {
@@ -15,8 +24,13 @@ public class main {
 		List<Anuncio> anuncios = new ArrayList<Anuncio>();
 		
 		GravarCSV csv = new GravarCSV();
+		Gravacao gravar = new GravarBD();
+		
+		
 		
 		Persistencia pers = new Persistencia(csv);
+		Persistencia persBD = new Persistencia(gravar);
+		
 		
 		Anuncio anuncio = new Anuncio();
 		anuncio.setCliente("natasha");
@@ -47,6 +61,7 @@ public class main {
 		
 		
 		pers.gravar(anuncios);
+		persBD.gravar(anuncios);
 	}
 
 }

@@ -1,4 +1,6 @@
-package desafio;
+package BO;
+
+import DTO.Anuncio;
 
 import java.text.ParseException;
 import java.util.List;

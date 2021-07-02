@@ -1,4 +1,4 @@
-package desafio;
+package DTO;
 
 public class CalculadoraProjecao {
 
@@ -19,7 +19,8 @@ public class CalculadoraProjecao {
 
 	public static int numCompartilhamentos(int clicks) {
 
-		return (int) Math.floor(clicks * (20.0 / 3.0));
+		int nCompartilhamentos = (int) Math.floor(clicks / 20.0);
+		return nCompartilhamentos * 3;
 	}
 
 }
