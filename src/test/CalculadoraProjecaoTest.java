@@ -7,13 +7,13 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import DTO.CalculadoraProjecao;
+import DTO.Calculadora;
 
 public class CalculadoraProjecaoTest {
 
     @Test
     public void test() {
-        CalculadoraProjecao calc = new CalculadoraProjecao();
+        Calculadora calc = new Calculadora();
 
         int output_f = calc.projecao(2, true);
 

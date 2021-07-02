@@ -5,7 +5,7 @@ package DTO;
  *
  * @author Natasha Busnardo
  */
-public class CalculadoraProjecao {
+public class Calculadora {
 
 	/**
 	 * Método que realiza a projeção de visualizações.

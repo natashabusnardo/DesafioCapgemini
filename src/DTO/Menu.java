@@ -89,10 +89,10 @@ public class Menu {
 
 		int valorInvestido = (int) anuncio.valorInvestido(anuncio.getDataInicio(), anuncio.getDataTermino(),
 				anuncio.getInvestimentoDia());
-		int numVisualizacoes = CalculadoraProjecao.projecao(valorInvestido, false);
-		int numVisualizacoesC = CalculadoraProjecao.projecao(valorInvestido, true);
-		int numCliques = CalculadoraProjecao.numCliques(numVisualizacoesC);
-		int numCompartilhamentos = CalculadoraProjecao.numCompartilhamentos(numCliques);
+		int numVisualizacoes = Calculadora.projecao(valorInvestido, false);
+		int numVisualizacoesC = Calculadora.projecao(valorInvestido, true);
+		int numCliques = Calculadora.numCliques(numVisualizacoesC);
+		int numCompartilhamentos = Calculadora.numCompartilhamentos(numCliques);
 
 		System.out.println("Valor total investido: " + valorInvestido);
 		System.out.println("Quantidade máxima de visualizações: " + numVisualizacoes);
