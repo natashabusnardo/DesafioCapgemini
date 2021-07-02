@@ -1,67 +1,21 @@
 package main;
 
-
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
 
-import BO.Gravacao;
-import BO.Persistencia;
-import DAO.GravarBD;
-import DAO.GravarCSV;
-import DTO.Anuncio;
-import DTO.CalculadoraProjecao;
-import DTO.ListaAnuncios;
+import DTO.Menu;
 
+public class Main {
+	public static void main(String[] args) throws IOException, ParseException {
 
-public class main {
+		Menu menu = new Menu();
 
-	public static void main(String[] args) throws ParseException, IOException {
-		// TODO Auto-generated method stub
+		int opcao = 0;
 
-		ListaAnuncios listaAnuncios = new ListaAnuncios();
-		List<Anuncio> anuncios = new ArrayList<Anuncio>();
-		
-		GravarCSV csv = new GravarCSV();
-		Gravacao gravar = new GravarBD();
-		
-		
-		
-		Persistencia pers = new Persistencia(csv);
-		Persistencia persBD = new Persistencia(gravar);
-		
-		
-		Anuncio anuncio = new Anuncio();
-		anuncio.setCliente("natasha");
-		anuncio.setNome("nome2");
-		anuncio.setDataInicio(Anuncio.retornaData("23/05/2014"));
-		anuncio.setDataTermino(Anuncio.retornaData("25/05/2014"));
-		anuncio.setInvestimentoDia(37);
+		do {
+			opcao = menu.buildMainMenu();
+			menu.selecionarOpcao(opcao);
+		} while (opcao != 4);
 
-		listaAnuncios.inserir(anuncio);
-		anuncios.add(anuncio);
-
-		System.out.println(listaAnuncios.toString());
-
-		int valorInvestido = (int) anuncio.valorInvestido(anuncio.getDataInicio(), anuncio.getDataTermino(),
-		anuncio.getInvestimentoDia());
-		int numVisualizacoes = CalculadoraProjecao.projecao(valorInvestido, false);
-		int numVisualizacoesC = CalculadoraProjecao.projecao(valorInvestido, true);
-		int numCliques = CalculadoraProjecao.numCliques(numVisualizacoesC);
-		int numCompartilhamentos = CalculadoraProjecao.numCompartilhamentos(numCliques);	
-
-		System.out.println("Valor total investido: " + valorInvestido);
-		System.out.println("Quantidade máxima de visualizações: " + numVisualizacoes);
-		System.out.println("Quantidade máxima de cliques: " + numCliques);
-		System.out.println("Quantidade máxima de compartilhamentos: " + numCompartilhamentos);
-
-		System.out.println(listaAnuncios.pesquisaCliente("natasha"));
-		System.out.println(listaAnuncios.pesquisaIntervalo(Anuncio.retornaData("24/05/2014"), Anuncio.retornaData("24/05/2014")));
-		
-		
-		pers.gravar(anuncios);
-		persBD.gravar(anuncios);
 	}
-
 }
