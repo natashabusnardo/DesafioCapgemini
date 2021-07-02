@@ -7,12 +7,23 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Classe responsável por criar lista de Anuncios
+ *
+ * @author Natasha Busnardo
+ */
 public class ListaAnuncios {
 	protected List<Anuncio> listaAnuncio = new ArrayList<Anuncio>();
 
 	public void inserir(Anuncio a) throws IOException {
 		listaAnuncio.add(a);
 	}
+
+	/**
+	 * Método que realiza a pesquisa por nome do cliente.
+	 * 
+	 * @param cliente
+	 */
 
 	public String pesquisaCliente(String cliente) {
 		String verAnuncios = " ";
@@ -25,9 +36,14 @@ public class ListaAnuncios {
 		return verAnuncios;
 	}
 
+	/**
+	 * Método que realiza a pesquisa por intervalo de tempo.
+	 * 
+	 * @param dataInicio, dataFinal
+	 */
 	public String pesquisaIntervalo(Date dataInicio, Date dataFinal) {
 		String verAnuncios = " ";
-		
+
 		for (Anuncio anuncio : listaAnuncio) {
 			if (dataInicio.after(anuncio.getDataInicio()) && dataFinal.before(anuncio.getDataTermino())) {
 				verAnuncios += anuncio.toString();
@@ -40,6 +56,11 @@ public class ListaAnuncios {
 		listaAnuncio = new ArrayList<>();
 	}
 
+	/**
+	 * Método que converte Date para StringDate no formato do MySQL.
+	 * 
+	 * @param pDate
+	 */
 	public static String DataForStringMySQL(Date pDate) {
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		String s = "";
@@ -51,6 +72,11 @@ public class ListaAnuncios {
 		return s;
 	}
 
+	/**
+	 * Método que converte StringDate no formato do MySQL para Date.
+	 * 
+	 * @param pDate
+	 */
 	public static Date DataMySQLHoraDia(String pDate) {
 
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd H:mm:ss");

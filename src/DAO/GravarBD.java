@@ -11,7 +11,11 @@ import BO.Gravacao;
 import DTO.Anuncio;
 import DTO.ListaAnuncios;
 
-
+/**
+ * Classe responsável por implementar a persistência no Banco de Dados utilizando injeção de dependência com a classe BO.Gravacao.
+ *
+ * @author Natasha Busnardo
+ */
 public class GravarBD implements Gravacao {
 
     private final String NOMEDATABELA = "Anuncio";

@@ -1,6 +1,17 @@
 package DTO;
 
+/**
+ * Classe responsável por realizar o cálculo dos anúncios
+ *
+ * @author Natasha Busnardo
+ */
 public class CalculadoraProjecao {
+
+	/**
+	 * Método que realiza a projeção de visualizações.
+	 * 
+	 * @param valorInvestido, inicio
+	 */
 
 	public static int projecao(int valorInvestido, boolean inicio) {
 
@@ -13,13 +24,24 @@ public class CalculadoraProjecao {
 		}
 	}
 
+	/**
+	 * Método que realiza a projeção do número de cliques.
+	 * 
+	 * @param visualizacoes
+	 */
+
 	public static int numCliques(int visualizacao) {
 		return (int) Math.floor(visualizacao * 0.12);
 	}
 
-	public static int numCompartilhamentos(int clicks) {
+	/**
+	 * Método que realiza a projeção do número de compartilhamentos.
+	 * 
+	 * @param cliques
+	 */
+	public static int numCompartilhamentos(int cliques) {
 
-		int nCompartilhamentos = (int) Math.floor(clicks / 20.0);
+		int nCompartilhamentos = (int) Math.floor(cliques / 20.0);
 		return nCompartilhamentos * 3;
 	}
 

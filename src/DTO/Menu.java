@@ -10,7 +10,11 @@ import BO.Gravacao;
 import BO.Persistencia;
 import DAO.GravarBD;
 import DAO.GravarCSV;
-
+/**
+ * Classe responsável por implementar o manu ao usuário
+ *
+ * @author Natasha Busnardo
+ */
 public class Menu {
 	Scanner entrada = new Scanner(System.in);
 	private ListaAnuncios listaAnuncios;
@@ -28,7 +32,10 @@ public class Menu {
 		listaAnuncios.inserir(a3);
 
 	}
-
+	/**
+	 * Método que imprime as opções do menu ao usuário.
+	 * 
+	 */
 	public int buildMainMenu() {
 
 		int opcao;
@@ -48,7 +55,10 @@ public class Menu {
 
 		return opcao;
 	}
-
+	/**
+	 * Método que recebe os valores do usuário para cadastro de novo anúncio e retorna os parâmetros da classe CalculadoraAnuncio.
+	 * 
+	 */
 	public void cadastrarAnuncio() throws ParseException, IOException {
 
 		GravarCSV csv = new GravarCSV();
@@ -94,7 +104,10 @@ public class Menu {
 		pers.gravar(anuncios);
 		persBD.gravar(anuncios);
 	}
-
+	/**
+	 * Método que recebe os valores do usuário para realização da pesquisa por intervalo de tempo.
+	 * 
+	 */
 	public void pesquisaIntervaloTempo() throws ParseException {
 
 		System.out.println("Insira a data de ínicio do anúncio: ");
@@ -105,6 +118,11 @@ public class Menu {
 
 		System.out.println(listaAnuncios.pesquisaIntervalo(Anuncio.retornaData(dataInicio), Anuncio.retornaData(dataTermino)));
 	}
+	
+	/**
+	 * Método que recebe os valores do usuário para realização da pesquisa por nome do cliente.
+	 * 
+	 */
 
 	public void pesquisaCliente() {
 		System.out.println("Insira o cliente: ");
@@ -112,6 +130,12 @@ public class Menu {
 
 		System.out.println(listaAnuncios.pesquisaCliente(cliente));
 	}
+	
+	/**
+	 * Método que seleciona os métodos a serem chamados de acordo com a escolha do usuário.
+	 * 
+	 * @param opcao
+	 */
 
 	public void selecionarOpcao(int opcao) throws ParseException, IOException {
 		

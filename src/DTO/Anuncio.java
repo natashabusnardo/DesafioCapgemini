@@ -7,6 +7,11 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
+/**
+ * Classe que representa o Anúncio.
+ *
+ * @author Natasha Busnardo
+ */
 public class Anuncio {
 	private String nome;
 	private String cliente;
@@ -17,9 +22,9 @@ public class Anuncio {
 	public Anuncio(String string, String string2, String string3, String string4, int i) {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Anuncio() {
-		
+
 	}
 
 	public String getNome() {
@@ -79,11 +84,22 @@ public class Anuncio {
 		return builder.toString();
 	}
 
+	/**
+	 * Método que realiza a conversão de um Date para String.
+	 * 
+	 * @param data
+	 */
 	public static String retornaData(Date data) {
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 		String dataString = format.format(data);
 		return dataString;
 	}
+
+	/**
+	 * Método que realiza a conversão de uma String para Date.
+	 * 
+	 * @param data
+	 */
 
 	public static Date retornaData(String data) throws ParseException {
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
@@ -91,6 +107,12 @@ public class Anuncio {
 		return dataDate;
 	}
 
+	/**
+	 * Método que realiza o cálculo de diferença entre dias e calcula o valor total
+	 * investido.
+	 * 
+	 * @param dataInicio, dataTermino, valorInvestido
+	 */
 	public double valorInvestido(Date dataInicio, Date dataTermino, double valorInvestido) throws ParseException {
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		LocalDate date1 = LocalDate.parse(retornaData(dataInicio), format);

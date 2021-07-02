@@ -2,7 +2,11 @@ package BO;
 
 import java.sql.DriverManager;
 import java.sql.Connection;
-
+/**
+ * Classe responsável por criar a conexão com o banco de dados.
+ *
+ * @author Natasha Busnardo
+ */
 public class Conexao {
 
 	final static String NOME_DO_BANCO = "anuncios";

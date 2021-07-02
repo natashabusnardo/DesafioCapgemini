@@ -12,6 +12,11 @@ import java.util.List;
 import BO.Gravacao;
 import DTO.Anuncio;
 
+/**
+ * Classe responsável por implementar a persistência em CSV utilizando injeção de dependência com a classe BO.Gravacao.
+ *
+ * @author Natasha Busnardo
+ */
 public class GravarCSV implements Gravacao {
 
 	public List<Anuncio> ler() throws ParseException {

@@ -5,7 +5,11 @@ import java.util.List;
 
 import DTO.Anuncio;
 
-
+/**
+ * Classe responsável por definir os métodos nas classes de persitência.
+ *
+ * @author Natasha Busnardo
+ */
 public class Persistencia {
 	
 	private Gravacao g;
