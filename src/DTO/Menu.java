@@ -3,6 +3,8 @@ package DTO;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,6 +12,7 @@ import BO.Gravacao;
 import BO.Persistencia;
 import DAO.GravarBD;
 import DAO.GravarCSV;
+
 /**
  * Classe responsável por implementar o manu ao usuário
  *
@@ -20,18 +23,11 @@ public class Menu {
 	private ListaAnuncios listaAnuncios;
 
 	public Menu() throws IOException {
-		
+
 		listaAnuncios = new ListaAnuncios();
 
-		Anuncio a1 = new Anuncio("Anuncio1", "natasha", "23/05/2014", "25/05/2014", 37);
-		Anuncio a2 = new Anuncio("Anuncio2", "rafa", "23/05/2015", "25/05/2015", 45);
-		Anuncio a3 = new Anuncio("Anuncio2", "dani", "23/05/2014", "25/05/2014", 45);
-
-		listaAnuncios.inserir(a1);
-		listaAnuncios.inserir(a2);
-		listaAnuncios.inserir(a3);
-
 	}
+
 	/**
 	 * Método que imprime as opções do menu ao usuário.
 	 * 
@@ -55,8 +51,10 @@ public class Menu {
 
 		return opcao;
 	}
+
 	/**
-	 * Método que recebe os valores do usuário para cadastro de novo anúncio e retorna os parâmetros da classe CalculadoraAnuncio.
+	 * Método que recebe os valores do usuário para cadastro de novo anúncio e
+	 * retorna os parâmetros da classe CalculadoraAnuncio.
 	 * 
 	 */
 	public void cadastrarAnuncio() throws ParseException, IOException {
@@ -104,23 +102,51 @@ public class Menu {
 		pers.gravar(anuncios);
 		persBD.gravar(anuncios);
 	}
+
 	/**
-	 * Método que recebe os valores do usuário para realização da pesquisa por intervalo de tempo.
+	 * Método que recebe os valores do usuário para realização da pesquisa por
+	 * intervalo de tempo.
+	 * 
+	 * @throws IOException
 	 * 
 	 */
-	public void pesquisaIntervaloTempo() throws ParseException {
+	public void pesquisaIntervaloTempo() throws ParseException, IOException {
 
+		/*
+		 * Anuncio a1 = new Anuncio("Anuncio1", "natasha", "23/05/2014", "25/05/2014",
+		 * 37); Anuncio a2 = new Anuncio("Anuncio2", "rafa", "23/05/2015", "25/05/2015",
+		 * 45); Anuncio a3 = new Anuncio("Anuncio2", "dani", "23/05/2014", "25/05/2014",
+		 * 45);
+		 * 
+		 * listaAnuncios.inserir(a1); listaAnuncios.inserir(a2);
+		 * listaAnuncios.inserir(a3);
+		 */
+		
 		System.out.println("Insira a data de ínicio do anúncio: ");
 		String dataInicio = entrada.next();
 
 		System.out.println("Insira a data de término do anúncio: ");
 		String dataTermino = entrada.next();
 
-		System.out.println(listaAnuncios.pesquisaIntervalo(Anuncio.retornaData(dataInicio), Anuncio.retornaData(dataTermino)));
+		
+		Date dataI = Anuncio.retornaData(dataInicio);
+		Date dataT = Anuncio.retornaData(dataTermino);
+		
+		Calendar dataIF = Calendar.getInstance();
+		Calendar dataTF = Calendar.getInstance();
+		
+		dataIF.setTime(dataI);
+		dataIF.add(Calendar.DATE, 1);
+		
+		dataTF.setTime(dataT);
+		dataTF.add(Calendar.DATE, -1);
+		
+		System.out.println(listaAnuncios.pesquisaIntervalo(dataIF.getTime(), dataTF.getTime()));
 	}
-	
+
 	/**
-	 * Método que recebe os valores do usuário para realização da pesquisa por nome do cliente.
+	 * Método que recebe os valores do usuário para realização da pesquisa por nome
+	 * do cliente.
 	 * 
 	 */
 
@@ -130,15 +156,16 @@ public class Menu {
 
 		System.out.println(listaAnuncios.pesquisaCliente(cliente));
 	}
-	
+
 	/**
-	 * Método que seleciona os métodos a serem chamados de acordo com a escolha do usuário.
+	 * Método que seleciona os métodos a serem chamados de acordo com a escolha do
+	 * usuário.
 	 * 
 	 * @param opcao
 	 */
 
 	public void selecionarOpcao(int opcao) throws ParseException, IOException {
-		
+
 		switch (opcao) {
 		case 1:
 			cadastrarAnuncio();
