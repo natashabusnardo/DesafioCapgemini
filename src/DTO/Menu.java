@@ -112,16 +112,7 @@ public class Menu {
 	 */
 	public void pesquisaIntervaloTempo() throws ParseException, IOException {
 
-		/*
-		 * Anuncio a1 = new Anuncio("Anuncio1", "natasha", "23/05/2014", "25/05/2014",
-		 * 37); Anuncio a2 = new Anuncio("Anuncio2", "rafa", "23/05/2015", "25/05/2015",
-		 * 45); Anuncio a3 = new Anuncio("Anuncio2", "dani", "23/05/2014", "25/05/2014",
-		 * 45);
-		 * 
-		 * listaAnuncios.inserir(a1); listaAnuncios.inserir(a2);
-		 * listaAnuncios.inserir(a3);
-		 */
-		
+
 		System.out.println("Insira a data de ínicio do anúncio: ");
 		String dataInicio = entrada.next();
 
