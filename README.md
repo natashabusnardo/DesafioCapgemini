@@ -4,7 +4,7 @@ A agência Divulga Tudo precisa de um programa para gerenciar os seus anúncios 
 # Instalação
 Para executar o programa é necessário seguir os seguintes passos: 
 1. Xampp - para iniciar o MySQL no localhost porta 3306(porta padrão).
-2. MySQL Workbench - Para executar o arquivo `bd/bd.sql` e instanciar a tabela do sistema. É necessário criar uma nova conexão, de nome localhost, usuário root e senha 1234.
+2. MySQL Workbench - Para executar o arquivo `bd/bd.sql` e instanciar a tabela do sistema. É necessário criar uma nova conexão, de nome *localhost*, usuário *root* e senha *1234*.
 3. IDE Java* - Para adicionar as bibliotecas o arquivo de conexão com o MYSQL `lib/mysql-connector-java-8.0.25.jar` na BuildPath do projeto.
 4. IDE Java - Para executar o arquivo `src/main/Main.java` e testar as funcionalidades do sistema.
 
