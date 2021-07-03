@@ -5,21 +5,21 @@ A agência Divulga Tudo precisa de um programa para gerenciar os seus anúncios 
 Para executar o programa é necessário seguir os seguintes passos: 
 1. Xampp - para iniciar o MySQL no localhost porta 3306(porta padrão).
 2. MySQL Workbench - Para executar o arquivo `bd/bd.sql` e instanciar a tabela do sistema. É necessário criar uma nova conexão, de nome *localhost*, usuário *root* e senha *1234*.
-3. IDE Java* - Para importar o projeto para a IDE. É necessáro adicionar o arquivo de conexão com o MYSQL `lib/mysql-connector-java-8.0.25.jar` na BuildPath do projeto.
-4. IDE Java - Para executar o arquivo `src/main/Main.java` e testar as funcionalidades do sistema.
+3. IDE Java* - Para importar o projeto para a IDE. É necessáro adicionar o arquivo de conexão com o MYSQL `lib/mysql-connector-java-8.0.25.jar` e adicionar o arquivo `mockito-all-1.10.19.jar` na BuildPath do projeto.
+4. IDE Java - Para executar o arquivo `src/view/main.java` e testar as funcionalidades do sistema.
 
 *Recomendo utilizar a IDE Eclipse 2020-12, ambiente onde o presente projeto foi desenvolvido.
 
 # Visão Geral
 O sistema foi desenvolvido na linguagem de programação Java, utilizando a IDE Eclipse versão 2021-12 e Java 11. Antes de executar o programa é necessário seguir os passos de instalação acima.
 O projeto possui persistência em CSV e MySQL, que são iniciadas assim que é realizado o primeiro cadastro.  
-Para realizar a persistência foi utilizado injeção de dependência para se manter um baixo nível de acoplamento entre as classes `src/BO/Gravacao.java`, `src/BO/Persistencia.java`, `src/BO/GravarCSV.java` e `src/BO/GravarBD.java`.
+Para realizar a persistência foi utilizado injeção de dependência para se manter um baixo nível de acoplamento entre as classes `src/BO/Gravacao.java`, `src/BO/Persistencia.java`, `src/bo/GravarCSV.java` e `src/bo/GravarBD.java`.
 
 # Documentação
-A documentação do projeto está disponível em `src/doc`, onde sua organização é espelhada de acordo com o diretório do arquivo que deseja verificar. Por exemplo: A documentação do arquivo `src/DTO/CalculadoraAnuncios.java` estará em `src/doc/DTO/CalculadoraAnuncios.java`.
+A documentação do projeto está disponível em `src/doc`, onde sua organização é espelhada de acordo com o diretório do arquivo que deseja verificar. Por exemplo: A documentação do arquivo `src/control/Calculadora.java` estará em `src/doc/control/Calculadora.java`.
 
 # Classe da Calculadora
-A classe responsável pela parte 1 do desafio está no diretório: `src/DTO/Calculadora.java`.
+A classe responsável pela parte 1 do desafio está no diretório: `src/control/Calculadora.java`.
 
 # Testes Unitários
 Os testes se encontram no diretório `src/test`.
