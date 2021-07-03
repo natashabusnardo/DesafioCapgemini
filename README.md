@@ -13,7 +13,7 @@ Para executar o programa é necessário seguir os seguintes passos:
 # Visão Geral
 O sistema foi desenvolvido na linguagem de programação Java, utilizando a IDE Eclipse versão 2021-12 e Java 11. Antes de executar o programa é necessário seguir os passos de instalação acima.
 O projeto possui persistência em CSV e MySQL, que são iniciadas assim que é realizado o primeiro cadastro.  
-Para realizar a persistência foi utilizado injeção de dependência para se manter um baixo nível de acoplamento entre as classes `src/BO/Gravacao.java`, `src/BO/Persistencia.java`, `src/bo/GravarCSV.java` e `src/bo/GravarBD.java`.
+Para realizar a persistência foi utilizado injeção de dependência para se manter um baixo nível de acoplamento entre as classes `src/bo/Gravacao.java`, `src/bo/Persistencia.java`, `src/dao/GravarCSV.java` e `src/dao/GravarBD.java`.
 
 # Documentação
 A documentação do projeto está disponível em `src/doc`, onde sua organização é espelhada de acordo com o diretório do arquivo que deseja verificar. Por exemplo: A documentação do arquivo `src/control/Calculadora.java` estará em `src/doc/control/Calculadora.java`.
