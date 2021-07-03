@@ -10,8 +10,8 @@ import java.util.Scanner;
 
 import BO.Gravacao;
 import BO.Persistencia;
-import DAO.GravarBD;
-import DAO.GravarCSV;
+import dao.GravarBD;
+import dao.GravarCSV;
 
 /**
  * Classe responsável por implementar o manu ao usuário
