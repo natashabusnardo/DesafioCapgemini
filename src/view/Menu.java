@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Scanner;
 
 
-import BO.Gravacao;
-import BO.Persistencia;
+import bo.Gravacao;
+import bo.Persistencia;
 import dao.GravarBD;
 import dao.GravarCSV;
 
@@ -21,7 +21,7 @@ import model.ListaAnuncios;
 
 
 /**
- * Classe responsável por implementar o manu ao usuário
+ * Classe responsÃ¡vel por implementar o manu ao usuÃ¡rio
  *
  * @author Natasha Busnardo
  */
@@ -38,7 +38,7 @@ public class Menu {
 	}
 
 	/**
-	 * Método que imprime as opções do menu ao usuário.
+	 * MÃ©todo que imprime as opÃ§Ãµes do menu ao usuÃ¡rio.
 	 * 
 	 */
 	public int buildMainMenu() {
@@ -47,10 +47,10 @@ public class Menu {
 
 		StringBuilder builder = new StringBuilder();
 
-		builder.append("\n ----------Calculadora de Anúncios------------");
-		builder.append("\n1 - Cadastrar Anúncio");
-		builder.append("\n2 - Filtrar anúncios por intervalo de tempo");
-		builder.append("\n3 - Filtrar anúncios por cliente");
+		builder.append("\n ----------Calculadora de AnÃºncios------------");
+		builder.append("\n1 - Cadastrar AnÃºncio");
+		builder.append("\n2 - Filtrar anÃºncios por intervalo de tempo");
+		builder.append("\n3 - Filtrar anÃºncios por cliente");
 		builder.append("\n4 - Sair");
 
 		System.out.println(builder.toString());
@@ -62,8 +62,8 @@ public class Menu {
 	}
 
 	/**
-	 * Método que recebe os valores do usuário para cadastro de novo anúncio e
-	 * retorna os parâmetros da classe CalculadoraAnuncio.
+	 * MÃ©todo que recebe os valores do usuÃ¡rio para cadastro de novo anÃºncio e
+	 * retorna os parÃ¢metros da classe CalculadoraAnuncio.
 	 * 
 	 */
 	public void cadastrarAnuncio() throws ParseException, IOException {
@@ -77,16 +77,16 @@ public class Menu {
 		Anuncio anuncio = new Anuncio();
 		List<Anuncio> anuncios = new ArrayList<Anuncio>();
 
-		System.out.println("Insira o nome do anúncio: ");
+		System.out.println("Insira o nome do anÃºncio: ");
 		anuncio.setNome(entrada.next());
 
 		System.out.println("Insira o cliente: ");
 		anuncio.setCliente(entrada.next());
 
-		System.out.println("Insira a data de ínicio do anúncio: ");
+		System.out.println("Insira a data de Ã­nicio do anÃºncio: ");
 		anuncio.setDataInicio(Anuncio.retornaData(entrada.next()));
 
-		System.out.println("Insira a data de término do anúncio: ");
+		System.out.println("Insira a data de tÃ©rmino do anÃºncio: ");
 		anuncio.setDataTermino(Anuncio.retornaData(entrada.next()));
 
 		System.out.println("Insira o investimento por dia: ");
@@ -104,16 +104,16 @@ public class Menu {
 		int numCompartilhamentos = calculadora.numCompartilhamentos(numCliques);
 
 		System.out.println("Valor total investido: " + valorInvestido);
-		System.out.println("Quantidade máxima de visualizações: " + numVisualizacoes);
-		System.out.println("Quantidade máxima de cliques: " + numCliques);
-		System.out.println("Quantidade máxima de compartilhamentos: " + numCompartilhamentos);
+		System.out.println("Quantidade mÃ¡xima de visualizaÃ§Ãµes: " + numVisualizacoes);
+		System.out.println("Quantidade mÃ¡xima de cliques: " + numCliques);
+		System.out.println("Quantidade mÃ¡xima de compartilhamentos: " + numCompartilhamentos);
 
 		pers.gravar(anuncios);
 		persBD.gravar(anuncios);
 	}
 
 	/**
-	 * Método que recebe os valores do usuário para realização da pesquisa por
+	 * MÃ©todo que recebe os valores do usuÃ¡rio para realizaÃ§Ã£o da pesquisa por
 	 * intervalo de tempo.
 	 * 
 	 * @throws IOException
@@ -122,10 +122,10 @@ public class Menu {
 	public void pesquisaIntervaloTempo() throws ParseException, IOException {
 
 
-		System.out.println("Insira a data de ínicio do anúncio: ");
+		System.out.println("Insira a data de Ã­nicio do anÃºncio: ");
 		String dataInicio = entrada.next();
 
-		System.out.println("Insira a data de término do anúncio: ");
+		System.out.println("Insira a data de tÃ©rmino do anÃºncio: ");
 		String dataTermino = entrada.next();
 
 		
@@ -145,7 +145,7 @@ public class Menu {
 	}
 
 	/**
-	 * Método que recebe os valores do usuário para realização da pesquisa por nome
+	 * MÃ©todo que recebe os valores do usuÃ¡rio para realizaÃ§Ã£o da pesquisa por nome
 	 * do cliente.
 	 * 
 	 */
@@ -158,8 +158,8 @@ public class Menu {
 	}
 
 	/**
-	 * Método que seleciona os métodos a serem chamados de acordo com a escolha do
-	 * usuário.
+	 * MÃ©todo que seleciona os mÃ©todos a serem chamados de acordo com a escolha do
+	 * usuÃ¡rio.
 	 * 
 	 * @param opcao
 	 */
@@ -184,7 +184,7 @@ public class Menu {
 			break;
 
 		default:
-			System.out.println("Opção inválida. Tente novamente.");
+			System.out.println("OpÃ§Ã£o invÃ¡lida. Tente novamente.");
 			break;
 		}
 
