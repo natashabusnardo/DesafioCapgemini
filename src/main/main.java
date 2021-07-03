@@ -5,7 +5,7 @@ import java.text.ParseException;
 
 import DTO.Menu;
 
-public class Main {
+public class main {
 	public static void main(String[] args) throws IOException, ParseException {
 
 		Menu menu = new Menu();
