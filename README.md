@@ -15,9 +15,6 @@ O sistema foi desenvolvido na linguagem de programação Java, utilizando a IDE 
 O projeto possui persistência em CSV e MySQL, que são iniciadas assim que é realizado o primeiro cadastro.  
 Para realizar a persistência foi utilizado injeção de dependência para se manter um baixo nível de acoplamento entre as classes `src/bo/Gravacao.java`, `src/bo/Persistencia.java`, `src/dao/GravarCSV.java` e `src/dao/GravarBD.java`.
 
-# Documentação
-A documentação do projeto está disponível em `src/doc`, onde sua organização é espelhada de acordo com o diretório do arquivo que deseja verificar. Por exemplo: A documentação do arquivo `src/control/Calculadora.java` estará em `src/doc/control/Calculadora.java`.
-
 # Classe da Calculadora
 A classe responsável pela parte 1 do desafio está no diretório: `src/control/Calculadora.java`.
 
